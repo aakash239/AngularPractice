@@ -15,9 +15,13 @@ export class App {
   callMe(){
     alert("Hello Angular");
   }
-  
-  counter(){
-    this.count++;
+
+  counter(action:string){
+    if (action == 'minus') {
+      this.count > 0 && this.count--;
+    } else {
+      this.count++;
+    }
     console.log(this.count);
   }
 }

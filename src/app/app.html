@@ -1,4 +1,6 @@
 <h1>Event Binding</h1>
 <button (click)="callMe()">Click Me</button>
 <hr>
-<button (click)="counter()">Counter</button>
+<button (click)="counter('minus')">-</button>
+<span> {{count}} </span>
+<button (click)="counter('plus')">+</button>
