@@ -1,12 +1,23 @@
 import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { Profile } from './profile/profile';
 
 @Component({
-  imports: [RouterOutlet],
+  imports: [//RouterOutlet,
+     Profile],
   selector: 'app-root',
   styleUrl: './app.css',
   templateUrl: './app.html',
 })
 export class App {
-  protected readonly title = signal('angular-app');
+  
+  count = 0;
+  callMe(){
+    alert("Hello Angular");
+  }
+  
+  counter(){
+    this.count++;
+    console.log(this.count);
+  }
 }
