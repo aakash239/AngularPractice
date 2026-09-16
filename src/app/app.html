@@ -1,3 +1,8 @@
 <h1>Parent to child data Passing</h1>
 
-<app-child [userName]="userName()"></app-child>
+<input type="" placeholder="enter New Username" (input)="newUser.set($event.target.value)" [value]="newUser()">
+<button (click)="addNewUser()">Add New User</button>
+
+@for (user of users(); track user) {
+    <app-child [userName]="user"></app-child>
+}

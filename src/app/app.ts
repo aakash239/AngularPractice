@@ -1,4 +1,4 @@
-import { Component, signal } from '@angular/core';
+import { Component, signal, WritableSignal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { Profile } from './profile/profile';
 import { Child } from './child/child';
@@ -11,5 +11,11 @@ import { Child } from './child/child';
   templateUrl: './app.html',
 })
 export class App {
-    userName=signal("Hello")
+    users=signal(["Hello", "Hi", "How", "Are", "You?"]);
+    newUser:WritableSignal<string> = signal("");
+
+    addNewUser(){
+      this.users.update((data) => [...data, this.newUser()]);
+      this.newUser.set("");
+    }
 }
