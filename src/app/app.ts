@@ -11,17 +11,7 @@ import { Profile } from './profile/profile';
 })
 export class App {
   
-  count = 0;
-  callMe(){
-    alert("Hello Angular");
-  }
-
-  counter(action:string){
-    if (action == 'minus') {
-      this.count > 0 && this.count--;
-    } else {
-      this.count++;
-    }
-    console.log(this.count);
+    handleEvent(eventName:string){
+    console.log(eventName);
   }
 }

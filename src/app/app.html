@@ -1,6 +1,7 @@
-<h1>Event Binding</h1>
-<button (click)="callMe()">Click Me</button>
-<hr>
-<button (click)="counter('minus')">-</button>
-<span> {{count}} </span>
-<button (click)="counter('plus')">+</button>
+<h1>Events</h1>
+<input type="text" ((change))="handleEvent($event.target.value)">
+
+<select name="" id="" (change)="handleEvent($event.type)">
+    <option value="car">Car</option>
+    <option value="bike">Bike</option>
+</select>
