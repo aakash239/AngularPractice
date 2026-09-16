@@ -1,8 +1,14 @@
 <h1>Parent to child data Passing</h1>
-
-<input type="" placeholder="enter New Username" (input)="newUser.set($event.target.value)" [value]="newUser()">
+<br>
+Selected: {{selectedWord()}}
+<br>
+<input type="text" placeholder="enter New Username" (input)="newUser.set($event.target.value)" [value]="newUser()">
 <button (click)="addNewUser()">Add New User</button>
 
 @for (user of users(); track user) {
-    <app-child [userName]="user"></app-child>
-}
+    <app-child 
+    [userName]="user" 
+    (selectedUser)="selectedWordFunc($event)"
+    (toBeDeletedUser) = "deleteWordFunc($event)">
+    </app-child>
+} 
