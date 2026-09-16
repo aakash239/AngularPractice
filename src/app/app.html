@@ -1,7 +1,3 @@
-<h1>Events</h1>
-<input type="text" ((change))="handleEvent($event.target.value)">
+<h1>Parent to child data Passing</h1>
 
-<select name="" id="" (change)="handleEvent($event.type)">
-    <option value="car">Car</option>
-    <option value="bike">Bike</option>
-</select>
+<app-child [userName]="userName()"></app-child>
