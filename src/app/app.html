@@ -1,19 +1,2 @@
-<h1>Parent to child data Passing</h1>
-<br>
-Selected: {{selectedWord()}}
-<br>
-<input type="text" placeholder="enter New Username" (input)="newUser.set($event.target.value)" [value]="newUser()">
-<button (click)="addNewUser()">Add New User</button>
-
-@for (user of users(); track user) {
-    <app-child 
-    [userName]="user" 
-    (selectedUser)="selectedWordFunc($event)"
-    (toBeDeletedUser) = "deleteWordFunc($event)">
-    </app-child>
-} 
-
-<br><hr><br>
-<h1>Global Store With signal </h1>
-<app-display-count></app-display-count><hr>
-<app-control-count></app-control-count>
+<h1>Router Test</h1>
+<router-outlet></router-outlet>
