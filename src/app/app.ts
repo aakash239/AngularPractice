@@ -1,9 +1,11 @@
 import { Component, signal, WritableSignal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { Child } from './child/child';
+import { DisplayCount } from './display-count/display-count';
+import { ControlCount } from './control-count/control-count';
 
 @Component({
-  imports: [Child],
+  imports: [Child, DisplayCount, ControlCount],
   selector: 'app-root',
   styleUrl: './app.css',
   templateUrl: './app.html',
