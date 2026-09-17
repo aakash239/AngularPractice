@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   imports: [],
@@ -6,4 +7,10 @@ import { Component } from '@angular/core';
   styleUrl: './profile.css',
   templateUrl: './profile.html',
 })
-export class Profile {}
+export class Profile {
+  constructor(public route:ActivatedRoute){}
+  ngOnInit(){
+    this.route.queryParams.subscribe(params => console.log(params)
+    )
+  }
+}
