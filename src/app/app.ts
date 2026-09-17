@@ -4,9 +4,10 @@ import { Child } from './child/child';
 import { DisplayCount } from './display-count/display-count';
 import { ControlCount } from './control-count/control-count';
 import { CommonModule } from '@angular/common';
+import { Header } from './components/header/header';
 
 @Component({
-  imports: [CommonModule, RouterOutlet, RouterLink],
+  imports: [CommonModule, RouterOutlet, RouterLink, Header],
   selector: 'app-root',
   styleUrl: './app.css',
   templateUrl: './app.html',
