@@ -5,6 +5,7 @@ import { DisplayCount } from './display-count/display-count';
 import { ControlCount } from './control-count/control-count';
 import { CommonModule } from '@angular/common';
 import { Header } from './components/header/header';
+import { Products } from './services/products';
 
 @Component({
   imports: [CommonModule, RouterOutlet, RouterLink, Header],
@@ -13,5 +14,10 @@ import { Header } from './components/header/header';
   templateUrl: './app.html',
 })
 export class App {
+  productData = signal<any[]>([]);
+  constructor(private productService:Products){ }
 
+  ngOnInit(){
+    this.productService.getProducts().subscribe((data) => this.productData.set(data.products))
+  }
 }

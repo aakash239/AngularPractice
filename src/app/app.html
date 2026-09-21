@@ -3,3 +3,11 @@
 <app-header></app-header>
 <hr>
 <router-outlet></router-outlet>
+<hr><hr>
+<h1>Product list</h1>
+@for (product of productData(); track product.id) {
+    <ul>
+        <li>Name : {{product.title}}</li>
+        <li>Price : {{product.price}}</li>
+    </ul>
+}
